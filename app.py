@@ -33,7 +33,7 @@ with open("auth/api_key", "r" ) as api_key:
 cache = MemoryCache()
 
 class MyVanna(ChromaDB_VectorStore, GoogleGeminiChat):
-    def __init__(self, config={'path':'/chroma_data'}):
+    def __init__(self, config={'path':'./chroma_data'}):
         ChromaDB_VectorStore.__init__(self, config=config)
         GoogleGeminiChat.__init__(self, config={'api_key': f'{API_KEY}', 'model': 'gemini-1.5-pro-001'})
 
